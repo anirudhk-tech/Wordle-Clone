@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wordpair/controller.dart';
+import 'package:wordpair/theme.dart';
 
 
 class WordSquare extends StatelessWidget {
@@ -24,13 +25,17 @@ class WordSquare extends StatelessWidget {
       width: width/(wordLen + 2),
       height: width/(wordLen + 2),
       decoration: BoxDecoration (
+        color: ThemeContext.wordleTheme.hintColor,
         border: Border.all(
-          color: Colors.white, 
+          color: ThemeContext.wordleTheme.primaryColor, 
           width: 1,
         )
       ),
       child: Center(
-        child: Text (letter)
+        child: Text (
+          letter,
+          style: ThemeContext.wordleTheme.textTheme.headlineLarge,  
+        )
       ),
     );
   }

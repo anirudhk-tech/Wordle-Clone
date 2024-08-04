@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wordpair/theme.dart';
 import 'pages/Home Page/wordle.dart';
 import 'package:get/get.dart';
 import 'controller.dart';
@@ -16,11 +17,7 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 0, 16, 247)),
-        useMaterial3: true,
-      ),
-      home: const WordlePage(),
+      home: WordlePage(),
     );
   }
 }
