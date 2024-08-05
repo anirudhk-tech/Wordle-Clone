@@ -1,57 +1,28 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:wordpair/controller.dart';
-import 'package:wordpair/widgets/Home Page/word_square.dart';
 import 'package:wordpair/theme.dart';
+import 'package:wordpair/widgets/Home%20Page/word_alert.dart';
+import 'package:wordpair/widgets/Home%20Page/word_input.dart';
+import 'package:wordpair/widgets/Home%20Page/wordle_row.dart';
+import 'package:wordpair/widgets/Home%20Page/wrong_row.dart';
 
 class WordlePage extends StatelessWidget {
   const WordlePage({super.key});
 
   @override
   Widget build (BuildContext context) {
-  
-  final controller = Get.find<WordController>();
-  var word = controller.word;
-  
+    
     return Container (
       color: ThemeContext.wordleTheme.secondaryHeaderColor,
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            color: ThemeContext.wordleTheme.secondaryHeaderColor,
-            child: Obx(() => Row (
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                for (var x = 0; x < word.value.length; x++) (
-                  Row(
-                    children: [
-                      const SizedBox(width: 10,),
-                      WordSquare(
-                        letter: word.value[x], 
-                        color: ThemeContext.wordleTheme.primaryColor,
-                      ),
-                      const SizedBox(width: 10,),
-                    ],
-                  )
-                )
-              ],
-            ))
-          ),
-          const SizedBox(height: 20,),
-          Center(
-            child: ElevatedButton(
-              onPressed: controller.nextWord,
-              style: ButtonStyle (
-                backgroundColor: WidgetStateProperty.all<Color>(ThemeContext.wordleTheme.hintColor),
-              ),
-              child: Text(
-                "Next",
-                style: ThemeContext.wordleTheme.textTheme.labelLarge,
-                ),
-              )
-            )
+          WordAlert(),
+          SizedBox(height: 100,),
+          WordleRow(),
+          SizedBox(height: 100,),
+          WordleInput(),
+          SizedBox(height: 100,),
+          WrongRow(),
         ]
       )
     );

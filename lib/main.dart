@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wordpair/theme.dart';
 import 'pages/Home Page/wordle.dart';
 import 'package:get/get.dart';
 import 'controller.dart';
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(WordController());
 
-    return GetMaterialApp(
+    return const GetMaterialApp(
       title: 'Flutter Demo',
       home: WordlePage(),
     );
