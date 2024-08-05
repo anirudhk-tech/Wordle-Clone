@@ -18,6 +18,7 @@ class WordController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
+    // ignore: await_only_futures
     allWords = await englishWords.allWords; 
     fetchWord();
   }
@@ -83,7 +84,7 @@ class WordController extends GetxController {
   }
 
   void addLetter(letter) {
-    correctLetters.value = correctLetters.value.contains(letter) ? correctLetters.value : [...correctLetters.value, letter];
+    correctLetters.value = correctLetters.contains(letter) ? correctLetters : [...correctLetters, letter];
   }
 
   void addWrong(letter) {
@@ -94,12 +95,12 @@ class WordController extends GetxController {
   bool check() {
     var count = 0; 
 
-    if (correctLetters.value.isEmpty) {
+    if (correctLetters.isEmpty) {
       return false;
     };
 
     for (var x = 0; x < 5; x++) {
-      if (correctLetters.value.contains(guess.value.text[x])) {
+      if (correctLetters.contains(guess.value.text[x])) {
         count += 1 * guess.value.text[x].allMatches(word.value).length;
       }
     }

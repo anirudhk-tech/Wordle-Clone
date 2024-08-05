@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(WordController());
+    Get.put(WordController());
 
     return const GetMaterialApp(
       title: 'Flutter Demo',
