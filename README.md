@@ -1,6 +1,6 @@
-# wordpair
+# Wordle Clone
 
-A new Flutter project.
+A clone of the NYT Wordle.
 
 ## Getting Started
 
