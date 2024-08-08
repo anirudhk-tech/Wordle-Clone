@@ -4,6 +4,9 @@ import 'package:get/get.dart';
 import 'controller.dart';
 
 void main() {
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+  };
   runApp(const MyApp());
 }
 

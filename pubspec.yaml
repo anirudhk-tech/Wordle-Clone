@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   get:
   all_english_words: ^1.0.3
+  flutter_animate: ^4.5.0
 
 dev_dependencies:
   flutter_test:

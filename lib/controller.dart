@@ -67,7 +67,7 @@ class WordController extends GetxController {
       Future.delayed(const Duration(seconds: 2), hideAlert);
       return;
     }
-
+    
     for (var x = 0; x < guessWord.length; x++) {
       if (word.value.contains(guessWord[x])) {
         addLetter(guessWord[x]);
